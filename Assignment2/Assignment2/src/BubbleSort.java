@@ -1,4 +1,3 @@
-
 public class BubbleSort {
 	public static void main(String[] args) {
 		int [] a = {8,6,42,32,95,5,4,2,9,25,84,63};
