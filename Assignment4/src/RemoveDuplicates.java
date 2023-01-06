@@ -1,29 +1,41 @@
-import java.util.Arrays;
 
 public class RemoveDuplicates {
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		String s = new String("I am Studing Java Full Stack Development");
-
-		char s1[] = s.toLowerCase().toCharArray();		
+	public static void removeDuplicates(char[] sarr,int len) {
 		
-		int n = s1.length; 
+		int index = 0;
+		char[] sarr2 = new char[len];
 		
-		int temp = 0;
-		for(int i=0;i<n-1;i++) {
+		for (int i = 0; i < len; i++) {
 			int j;
-			for(j=0;j<n-1;j++) {
-				if(s1[i] == s1[j]) {
-					break;	
+			
+			for (j = 0; j < i; j++) {
+				
+				if(sarr[i] != ' ' && sarr[j] != ' ') {
+					
+					if(sarr[i] == sarr[j])
+						break;
+					
 				}
 			}
 			
-			if(j==i) {
-				s1[temp++] = s1[i];
-			}
+			if(j==i)
+				sarr2[index++] = sarr[i];
+		
 		}
-		System.out.println(String.valueOf(Arrays.copyOf(s1, temp)));   
+		System.out.print(sarr2);
+	}
+	
+	public static void main(String[] args) {
+		String s = "Gautam Ganesh Velu";
+		
+		char[] sarr = s.toCharArray();
+		
+		int n = sarr.length;
+		
+		removeDuplicates(sarr, n);
+		
+		
 	}
 
 }

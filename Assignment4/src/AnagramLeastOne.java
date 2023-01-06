@@ -1,24 +1,11 @@
 
-public class Anagramleast {
+public class AnagramLeastOne {
 
-	//Creating a method to Lower all the Characters in a String.
-	public static String toLow(String s) {
-		String s3 = "";
-		for (int i=0;i<s.length();i++) {
-			if(s.charAt(i)>=65 && s.charAt(i)<=90) {
-				s3+=(char)(s.charAt(i)+32);
-			}			
-			else {
-				s3+=s.charAt(i);
-			}
-		}
-		return s3;
-	}
-	
-	//Creating a method to remove WhiteSpaces.
-	public static String removeSpaces(String s) {
+	public static String removeSpace(String s) {
 		String ss = "";
-		for (int i=0;i<s.length();i++) {
+		
+		for(int i=0;i<s.length();i++) {
+			
 			if(s.charAt(i)!=' ') {
 				ss += s.charAt(i);
 			}
@@ -26,7 +13,21 @@ public class Anagramleast {
 		return ss;
 	}
 	
-	//Creating a Method to Sort Character Arrays.
+	public static String toLow(String s) {
+		String s3 = "";
+		
+		for (int i=0;i<s.length();i++) {
+			
+			if(s.charAt(i)>=65 && s.charAt(i)<=90) 
+				s3+=(char)(s.charAt(i)+32);
+						
+			else 
+				s3+=s.charAt(i);
+			
+		}
+		return s3;
+	}
+	
 	public static char[] tosort(char ch[]) {
 		char temp;
 		int i = 0;
@@ -48,16 +49,18 @@ public class Anagramleast {
         
         return ch;
 	}
-		//Main Method
+	
 		public static void main(String[] args) {
+			// TODO Auto-generated method stub
 		
 			String s1 = "A Gentle man";
 			String s2 = "Elegant man";
 			
 			s1=toLow(s1);
-			s1=removeSpaces(s1);
 			s2=toLow(s2);
-			s2=removeSpaces(s2);		
+			
+			s1 = removeSpace(s1);
+			s2 = removeSpace(s2);
 			
 			System.out.println(s1);
 			System.out.println(s2);
